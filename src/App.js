@@ -1,12 +1,11 @@
-import './App.css';
-import CurrencyConvertor from './components/Currency-Convertor/CurrencyConvertor';
+import "./App.css";
+import CurrencyConvertor from "./components/Currency-Convertor/CurrencyConvertor";
 
 function App() {
   return (
-    <>
-       <h1>React Projects</h1>
-       <CurrencyConvertor/>
-  </>
+    <div className="min-h-screen bg-gray-300 flex items-center justify-center">
+      <CurrencyConvertor />
+    </div>
   );
 }
 
