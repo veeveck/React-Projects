@@ -1,0 +1,41 @@
+export const BANK_UPI_HANDLES = [
+  "okaxis",
+  "BARODAMPAY",
+  "rbl",
+  "upi",
+  "allbank",
+  "aubank",
+  "axisbank",
+  "scotiabank",
+  "bandhan",
+  "indus",
+  "kbl",
+  "federal",
+  "sbi",
+  "tdbank",
+  "bmo",
+  "yesbank",
+  "citi",
+  "citigold",
+  "dlb",
+  "dbs",
+  "freecharge",
+  "hsbc",
+  "rbcbank",
+  "icici",
+  "kotak",
+  "paytm",
+  "nationalbank",
+  "ybl",
+  "okhdfcbank",
+  "okicici",
+  "oksbi",
+  "axl",
+  "ibl",
+  "sib",
+];
+
+export const NOPE = () => {};
+
+export const GRAPHIC_URL =
+  "https://uploads.codesandbox.io/uploads/user/db72b415-e33f-48d9-ba47-160088dc6c79/78ab-payment-graphic.png";
