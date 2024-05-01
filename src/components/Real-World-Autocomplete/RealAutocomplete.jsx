@@ -29,6 +29,15 @@ const RealAutocomplete = () => {
     setPrediction(`${currentUserName}@${currentPredictedBankName}`);
     setPredictions(matchedBankNames);
   };
+  const handleBankNameClick = (e) => {
+    const { target } = e;
+    const currentBankName = target.getAttribute("data-bank-name");
+    const [currentUser] = upiId.split("@");
+    const updatedUpiId = `${currentUser}@${currentBankName}`;
+    setUpiId(updatedUpiId);
+    setPrediction(updatedUpiId);
+    setPredictions([]);
+  };
   return (
     <div className="container">
       <img src={GRAPHIC_URL} alt="Payment Pic" />
@@ -46,7 +55,15 @@ const RealAutocomplete = () => {
         {predictions.length ? (
           <ul>
             {predictions.map((prediction) => {
-              return <li key={prediction}>{prediction}</li>;
+              return (
+                <li
+                  key={prediction}
+                  data-bank-name={prediction}
+                  onClick={handleBankNameClick}
+                >
+                  {prediction}
+                </li>
+              );
             })}
           </ul>
         ) : null}
