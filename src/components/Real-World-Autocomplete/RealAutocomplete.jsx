@@ -12,7 +12,7 @@ const RealAutocomplete = () => {
     } = e;
     setUpiId(value);
     if (!value || !value.includes("@")) {
-      setPrediction("");
+      setPrediction(value || "");
       setPredictions([]);
       return;
     }
@@ -38,6 +38,15 @@ const RealAutocomplete = () => {
     setPrediction(updatedUpiId);
     setPredictions([]);
   };
+  const handleKeyPress = (e) => {
+    const { which = -1, keyCode = -1, code = "" } = e;
+    const isRightArrowClick =
+      which === 39 || keyCode === 39 || code.toLowerCase() === "arrowright";
+    if (isRightArrowClick) {
+      setUpiId(prediction);
+      setPredictions([]);
+    }
+  };
   return (
     <div className="container">
       <img src={GRAPHIC_URL} alt="Payment Pic" />
@@ -47,8 +56,13 @@ const RealAutocomplete = () => {
           <input
             type="text"
             placeholder="Enter your UPI ID"
+            pattern=".+@.+"
+            autoCapitalize="off"
+            autoComplete="off"
+            spellCheck="off"
             value={upiId}
             onChange={handleUpiIdChange}
+            onKeyDown={handleKeyPress}
           />
         </div>
         <button>Pay Now</button>

@@ -1,5 +1,17 @@
 .container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: white;
+  border: 2px solid #2ecc71;
+  border-radius: 10px;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 form {
   width: 30%;
@@ -21,7 +33,7 @@ input {
   border-color: transparent;
   outline: none;
   background: transparent;
-  /* border-bottom: 1px solid #a7a7a762; */
+  border-bottom: 1px solid #a7a7a762;
 }
 
 /* // prediction */
@@ -29,7 +41,7 @@ input:first-child {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: -1;
 }
 
