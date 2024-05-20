@@ -1,7 +1,28 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 const ProductDetail = () => {
-  return <div>ProductDetail</div>;
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((response) => response.json())
+      .then((data) => setProduct(data));
+  }, [id]);
+  return (
+    <div>
+      <h2>ProductDetail</h2>
+      {product ? (
+        <div>
+          <img src={product.thumbnail} alt="Product" />
+          <h3>{product.title}</h3>
+          <h3>$ {product.price}</h3>
+          <p>{product.description}</p>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 };
 
 export default ProductDetail;

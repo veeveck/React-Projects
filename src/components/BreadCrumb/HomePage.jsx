@@ -4,6 +4,7 @@ import BreadCrumb from "./BreadCrumb";
 import Home from "./Home";
 import ProductListing from "./ProductListing";
 import ProductDetail from "./ProductDetail";
+import "./HomePage.css";
 const HomePage = () => {
   return (
     <Router>
@@ -12,9 +13,9 @@ const HomePage = () => {
         <BreadCrumb />
         <hr />
         <Routes>
-          <Route path="/" element={Home} />
-          <Route path="/products" element={ProductListing} />
-          <Route path="/products/:id" element={ProductDetail} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductListing />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </Router>
