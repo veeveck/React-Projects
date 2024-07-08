@@ -1,0 +1,19 @@
+.list-transfer {
+  display: flex;
+  gap: 10rem;
+}
+.list-container {
+  border: 3px solid olive;
+  padding: 10rem 10rem;
+}
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+.buttons-container button {
+  border: 3px solid blue;
+  padding: 5px;
+  background-color: skyblue;
+}
